@@ -3,687 +3,485 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GM Consultant | Education & Recruitment Solutions</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> 
-    <!-- Load Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+    <title>GM Consultant </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        :root {
-            --primary: #0B2447;
-            --secondary: #19376D;
-            --accent: #576CBC;
-            --text: #A5D7E8;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-        } 
-        .glider {
-    width: 100%;
+    :root {
+    --primary-gray: #5e6264;
+    --secondary-gray: #6c757d;
+    --light-gray: #f8f9fa;
 }
 
-        .gradient-bg {
-            background: linear-gradient(135deg, #0B1726 0%, #1B3B5E 50%, #2C5F96 100%);
+        body {
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        .custom-shape {
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        .navbar {
+            background-color: var(--primary-gray) !important;
+            padding: 1rem 0;
         }
 
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
+        .carousel-item {
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        .carousel-caption {
+    
+    padding: 20px;
+    border-radius: 5px;
+}
+
+        .section-padding {
+            padding: 5rem 0;
         }
 
-        .card-hover {
-            transition: all 0.3s ease;
+        .bg-gray {
+            background-color: var(--light-gray);
         }
 
-        .card-hover:hover {
+        .service-card {
+            transition: transform 0.3s;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .text-gradient {
-            background: linear-gradient(90deg, #A5D7E8, #576CBC);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .nav-link {
-            position: relative;
+        .footer {
+            background-color: var(--primary-gray);
+            color: white;
+            padding: 3rem 0;
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
         }
 
-        .nav-link:hover::after {
-            width: 100%;
+        .social-icons a:hover {
+            color: var(--light-gray);
         }
 
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .btn-custom {
+            background-color: var(--primary-gray);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: all 0.3s;
         }
 
-        .glider-prev, .glider-next {
-            top: 50%;
-            transform: translateY(-50%);
+        .btn-custom:hover {
+            background-color: var(--secondary-gray);
+            color: white;
         }
 
-        .glider-prev {
-            left: -40px;
+        @media (max-width: 768px) {
+            .carousel-item {
+                height: 50vh;
+            }
         }
-
-        .glider-next {
-            right: -40px;
-        }
-        
-        /* To add overlay on images */
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.9;} 
-
-  header {
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-    color: #1a1a1a; /* Dark text for white background */
-  }
-
-  /* Styles when over a blue section */
-  header.over-blue-section {
-    background-color: rgba(11, 36, 71, 0.9); /* Semi-transparent blue */
-    color: #ffffff; /* White text for blue background */
-  }
-
-  /* Ensure the "Get Started" button is visible */
-  header.over-blue-section .nav-link,
-  header.over-blue-section p {
-    color: #ffffff; /* White text for blue background */
-  }
-
-  header.over-blue-section button {
-    background-color: #ffffff; /* White background for button */
-    color: #0B2447; /* Blue text for button */
-  }
-
-  header.over-blue-section button:hover {
-    background-color: #f0f0f0; /* Light gray on hover */
-  }
-
-    </style>
+    </style> 
+   
+    
 </head>
-<body class="bg-white">
-    <!-- Header -->
-    <header class="fixed w-full z-50 bg-white/90 transition-colors duration-300">
-        <nav class="container mx-auto px-6 py-4">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center">
-              <img src="https://drive.google.com/thumbnail?id=1H9dlLjhSQCH3BaE2bHqKR7QPm8dr_oqt&sz=w1000" alt="GM Consultant Logo" class="h-12 w-auto">
-              <p class="ml-2">GM Connect</p>
-              <div class="hidden md:flex items-center ml-16 space-x-8">
-                <a href="#home" class="nav-link text-gray-900 hover:text-[var(--accent)]">Home</a>
-                <a href="#services" class="nav-link text-gray-900 hover:text-[var(--accent)]">Services</a>
-                <a href="#about" class="nav-link text-gray-900 hover:text-[var(--accent)]">About</a>
-                <a href="#contact" class="nav-link text-gray-900 hover:text-[var(--accent)]">Contact</a>
-              </div>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg px-5 fixed-top" style="background-color: #5e6264 !important;">
+            <a class="navbar-brand text-white" href="#">
+                <img src="./WhatsApp_Image_2025-02-25_at_11.06.36_PM-removebg-preview.png" alt="GM Consultant Logo" style="height: 40px;" /> GM Consultant 
+              </a>
+              
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <div class="flex items-center space-x-4">
-              <button class="px-6 py-2 rounded-full bg-[var(--primary)] text-white hover:bg-[var(--secondary)] transition">
-                Get Started
-              </button>
-            </div>
-          </div>
-        </nav>
-      </header>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-<section id="home" class="custom-shape gradient-bg min-h-screen flex items-center pt-20 w-full">
-    <div class="container mx-auto px-4 max-w-7xl">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <!-- Left Column -->
-            <div data-aos="fade-right">
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                    Your Partner in Education & Recruitment
-                </h1>
-                <p class="text-[var(--text)] text-xl mb-8 leading-relaxed">
-                    GM Consultant provides expert guidance for Ausbildung, university admissions, and recruitment solutions in Germany. Let us help you achieve your goals.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="px-8 py-4 rounded-full bg-white text-[var(--primary)] hover:bg-[var(--text)] hover:text-white transition duration-300">
-                        Apply Now
-                    </button>
-                    <button class="px-8 py-4 rounded-full border-2 border-white text-white hover:bg-white hover:text-[var(--primary)] transition duration-300">
-                        Learn More
-                    </button>
+    <!-- Carousel -->
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active position-relative">
+                <img src="./business-meeting-office.jpg" 
+                     class="d-block w-100" alt="Businessman Working">
+            
+                <!-- Dark overlay for the entire image -->
+                <div class="position-absolute top-0 start-0 w-100 h-100" 
+                     style="background: rgba(0,0,0,0.4);"></div>
+            
+                <!-- Caption -->
+                <div class="carousel-caption d-flex flex-column align-items-start justify-content-center text-start w-75 h-100">
+                    <h1 class="display-3 text-white text-shadow">Ihr Partner für Personalvermittlung</h1>
+                    <p class="text-white fs-4 text-shadow">Wir verbinden Top-Talente mit führenden Unternehmen – effizient, zuverlässig und mit maßgeschneiderten Lösungen in Deutschland.</p>
+                    <a href="#contact" class="btn btn-lg btn-outline-secondary text-white mt-3 px-4 py-3 fw-bold custom-btn">Jetzt einstellen</a>
                 </div>
             </div>
-            <!-- Right Column -->
-            <div class="w-full md:w-4/4 lg:w-4/4 h-auto md:h-[500px] lg:h-[600px]" data-aos="fade-left">
-                <img src="https://media.istockphoto.com/id/2094337676/photo/diverse-team-working-together-in-modern-co-working-space.jpg?s=2048x2048&w=is&k=20&c=laH1UL7RxM9mqD9TSOYbAFbHBO3RokKTz3O1arUJ0_0=" 
-                     alt="Hero Image" 
-                     class="w-full h-full max-w-2xl mx-auto animate-float object-cover" 
-                     loading="lazy">
-            </div>
             
+            
+    
+            <!-- Slide 2 -->
+          <!-- Slide 2 -->
+<div class="carousel-item">
+    <img src="./businesswoman-team-sitting-office.jpg" 
+         class="d-block w-100" alt="Business Tools">
+    <!-- Dark overlay for the entire image -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.4)"></div>
+    <div class="carousel-caption position-absolute top-50 start-50 translate-middle text-start w-75">
+        <h1 class="display-3 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Finde deinen Traumjob</h1> 
+<p class="fw-bold text-white" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Entdecke neue Karrieremöglichkeiten mit fachkundiger Beratung und maßgeschneiderter Jobvermittlung.</p> 
+<a href="#contact" class="btn btn-lg btn-outline-secondary text-white mt-3 px-4 py-3 fw-bold custom-btn">Job finden</a>
+
+       
+    </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="carousel-item">
+    <img src="./low-angle-cheerful-team-students-passed-test-by-preparing-all-together.jpg"  
+    
+         class="d-block w-100" alt="Business Executives">
+    <!-- Dark overlay for the entire image -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.4)"></div>
+    <div class="carousel-caption position-absolute top-50 start-50 translate-middle text-start w-75">
+        <h1 class="display-3 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Fachkundige Beratung für Ausbildung & Studium</h1>
+        <p class="text-white" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Gestalte deine akademische Laufbahn mit vertrauenswürdiger Expertise – von der Berufsberatung bis zur erfolgreichen Einschreibung.</p>
+        <a href="#contact" class="btn btn-lg btn-outline-secondary text-white mt-3 px-4 py-3 fw-bold custom-btn">Studieren</a>
+        
+    </div>
+</div>
+    
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+
+    <!-- About Section -->
+    <section id="services" class="py-5">  
+        <div class="container">
+            <!-- Abschnittstitel -->
+            <h2 class="display-3 text-center mb-5" data-aos="fade-up">Unsere Dienstleistungen</h2>
+    
+            <div class="row g-4">
+                <!-- Jobvermittlung -->
+                <div class="col-md-4">
+                    <div class="service-card card h-100 p-4 text-center shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://img.freepik.com/free-photo/creative-people-working-office_23-2147656715.jpg" 
+                             class="card-img-top rounded-3 mb-3" alt="Jobvermittlung">
+                        <h3 class="h4 fw-bold">Jobvermittlungsdienste</h3>
+                        <p class="text-muted">Wir bringen Unternehmen mit qualifizierten und motivierten Mitarbeitern zusammen.</p>
+                    </div>
+                </div>
+    
+                <!-- Unterstützung für Arbeitssuchende -->
+                <div class="col-md-4">
+                    <div class="service-card card h-100 p-4 text-center shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://img.freepik.com/free-photo/close-up-smiley-woman-working_23-2149300652.jpg" 
+                             class="card-img-top rounded-3 mb-3" alt="Arbeitssuchende">
+                        <h3 class="h4 fw-bold">Unterstützung für Arbeitssuchende</h3>
+                        <p class="text-muted">Wir helfen Kandidaten, einen Job, eine Unterkunft und die erforderlichen Dokumente zu sichern.</p>
+                    </div>
+                </div>
+    
+                <!-- Ausbildung Unterstützung -->
+                <div class="col-md-4">
+                    <div class="service-card card h-100 p-4 text-center shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://img.freepik.com/free-photo/medium-shot-graduate-student_23-2148950577.jpg" 
+                             class="card-img-top rounded-3 mb-3" alt="Ausbildung Unterstützung">
+                        <h3 class="h4 fw-bold">Unterstützung bei der Ausbildung</h3>
+                        <p class="text-muted">Wir bieten Beratung zu Ausbildungsplätzen, Unterkunft und bürokratischer Unterstützung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+<!-- Statistik-Bereich -->
+<section class="py-5 text-white" style="background-color: #5e6264;">
+    <div class="container">
+        <div class="row text-center g-4">
+            <!-- Erfolgreiche Vermittlungen -->
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="display-4 fw-bold mb-2">500+</div>
+                <div class="text-muted">Erfolgreiche Vermittlungen</div>
+            </div>
+
+            <!-- Kundenzufriedenheit -->
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="display-4 fw-bold mb-2">98%</div>
+                <div class="text-muted">Kundenzufriedenheit</div>
+            </div>
+
+            <!-- Partnerunternehmen -->
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="display-4 fw-bold mb-2">200+</div>
+                <div class="text-muted">Partnerunternehmen</div>
+            </div>
+
+            <!-- Jahre Erfahrung -->
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="display-4 fw-bold mb-2">15+</div>
+                <div class="text-muted">Jahre Erfahrung</div>
+            </div>
         </div>
     </div>
 </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold mb-4">Our Services</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Comprehensive solutions for Ausbildung, job placement, and corporate staffing.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Ausbildung - Company Outreach -->
-                <div class="card-hover rounded-2xl bg-white p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl text-blue-600 mb-6 animate-bounce">
-                      <i class="fas fa-handshake"></i> <!-- Handshake Icon -->
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Company Outreach for Ausbildung</h3>
-                    <p class="text-gray-600">
-                      Assistance in reaching out to companies for apprenticeship placements.
-                    </p>
-                </div>
-
-                <!-- Ausbildung - Secure Training Spot -->
-                <div class="card-hover rounded-2xl bg-white p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl text-green-600 mb-6 animate-pulse">
-                        <i class="fas fa-user-graduate"></i> <!-- Graduation Icon -->
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Secure an Ausbildung Spot</h3>
-                    <p class="text-gray-600">
-                        Helping candidates find and secure a suitable vocational training position.
-                    </p>
-                </div>
-
-                <!-- Ausbildung - Accommodation Support -->
-                <div class="card-hover rounded-2xl bg-white p-8 shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl text-purple-600 mb-6 animate-bounce">
-                        <i class="fas fa-hotel"></i> <!-- Hotel Icon -->
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Accommodation Assistance</h3>
-                    <p class="text-gray-600">
-                        Helping trainees find housing near their Ausbildung location.
-                    </p>
-                </div>
-
-                <!-- Ausbildung - Bureaucratic Assistance -->
-                <div class="card-hover rounded-2xl bg-white p-8 shadow-lg" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-4xl text-yellow-600 mb-6 animate-bounce">
-                        <i class="fas fa-file-contract"></i> <!-- Contract Icon -->
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Bureaucratic Support</h3>
-                    <p class="text-gray-600">
-                        Assistance with government procedures related to Ausbildung.
-                    </p>
-                </div>
-
-                <!-- Worker - Job Offer Confirmation -->
-                <div class="card-hover rounded-2xl bg-white p-8 shadow-lg" data-aos="fade-up" data-aos-delay="500">
-                    <div class="text-4xl text-red-600 mb-6 animate-pulse">
-                        <i class="fas fa-briefcase"></i> <!-- Briefcase Icon -->
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Job Offer Confirmation</h3>
-                    <p class="text-gray-600">
-                        Ensuring workers receive and confirm their job contracts.
-                    </p>
-                </div>
-
-                <!-- Worker - Housing Assistance -->
-                <div class="card-hover rounded-2xl bg-white p-8 shadow-lg" data-aos="fade-up" data-aos-delay="600">
-                    <div class="text-4xl text-blue-500 mb-6 animate-bounce">
-                        <i class="fas fa-home"></i> <!-- Home Icon -->
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Housing Support for Workers</h3>
-                    <p class="text-gray-600">
-                        Helping workers find suitable accommodation near their workplace.
-                    </p>
-                </div>
-
-                <!-- Company - Qualified Personnel Recruitment -->
-                <div class="card-hover rounded-2xl bg-white p-8 shadow-lg" data-aos="fade-up" data-aos-delay="700">
-                    <div class="text-4xl text-green-500 mb-6 animate-bounce">
-                        <i class="fas fa-users"></i> <!-- Users Icon -->
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Recruitment of Qualified Staff</h3>
-                    <p class="text-gray-600">
-                        Connecting companies with skilled and motivated employees.
-                    </p>
-                </div>
-
-                <!-- Company - Bureaucratic Assistance -->
-                <div class="card-hover rounded-2xl bg-white p-8 shadow-lg" data-aos="fade-up" data-aos-delay="800">
-                    <div class="text-4xl text-orange-500 mb-6 animate-pulse">
-                        <i class="fas fa-gavel"></i> <!-- Gavel Icon -->
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Bureaucratic Facilitation</h3>
-                    <p class="text-gray-600">
-                        Simplifying legal and governmental processes for businesses hiring new employees.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- Image Carousel Section -->
 
 
-<section class="py-24 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <!-- Heading Section -->
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-4">Our Success Stories</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                See how we’ve helped students and professionals achieve their dreams.
+<!-- Prozess-Bereich -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="display-5 fw-bold mb-3">Unser Arbeitsprozess</h2>
+            <p class="text-muted mx-auto" style="max-width: 600px;">
+                Unser bewährter Prozess sorgt für erfolgreiche Ergebnisse für Kandidaten und Unternehmen.
             </p>
         </div>
-
-        <!-- Glider Carousel -->
-        <div class="glider-contain">
-            <div class="glider">
-                <!-- Image 1 -->
-                <div class="p-4">
-                    <img src="https://media.gettyimages.com/id/1135381120/photo/portrait-of-a-young-woman-outdoors-smiling.jpg?s=612x612&w=0&k=20&c=T5dukPD1r-o0BFqeqlIap7xzw07icucetwKaEC2Ms5M=" 
-                         alt="Success Story 1" class="rounded-lg w-full h-auto">
-                </div>
-                <!-- Image 2 -->
-                <div class="p-4">
-                    <img src="https://media.istockphoto.com/id/1074638206/photo/side-view-long-beard-business-man-portrait.jpg?s=612x612&w=0&k=20&c=3CXnWtuXukFWvfiepdmohttsVe3GzF8q6zKR5SGp92U=" 
-                         alt="Success Story 2" class="rounded-lg w-full h-auto">
-                </div>
-                <!-- Image 3 -->
-                <div class="p-4">
-                    <img src="https://pub-34fffd0afaaa4589b510c03a48ff88ac.r2.dev/photo_demo_flux/packages/professional/photos2Results/m/photo3.jpeg" 
-                         alt="Success Story 3" class="rounded-lg w-full h-auto">
+        <div class="row text-center g-4">
+            <!-- Schritt 1 -->
+            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fs-3 fw-bold mb-3" style="width: 80px; height: 80px;">1</div>
+                    <h3 class="h5 fw-bold">Erstberatung</h3>
+                    <p class="text-muted">Verstehen Ihrer spezifischen Bedürfnisse und Anforderungen</p>
                 </div>
             </div>
-            <button class="glider-prev">«</button>
-            <button class="glider-next">»</button>
+            <!-- Schritt 2 -->
+            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fs-3 fw-bold mb-3" style="width: 80px; height: 80px;">2</div>
+                    <h3 class="h5 fw-bold">Strategieentwicklung</h3>
+                    <p class="text-muted">Erstellung eines maßgeschneiderten Ansatzes für Ihren Erfolg</p>
+                </div>
+            </div>
+            <!-- Schritt 3 -->
+            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fs-3 fw-bold mb-3" style="width: 80px; height: 80px;">3</div>
+                    <h3 class="h5 fw-bold">Umsetzung</h3>
+                    <p class="text-muted">Präzise und sorgfältige Durchführung des Plans</p>
+                </div>
+            </div>
+            <!-- Schritt 4 -->
+            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fs-3 fw-bold mb-3" style="width: 80px; height: 80px;">4</div>
+                    <h3 class="h5 fw-bold">Laufende Unterstützung</h3>
+                    <p class="text-muted">Kontinuierliche Hilfe und Optimierung</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-
-
-    <!-- Stats Section -->
-    <section class="py-20 gradient-bg text-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl font-bold mb-2">500+</div>
-                    <div class="text-[var(--text)]">Successful Placements</div>
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold">Was unsere Kunden sagen</h2>
+            <p class="text-muted">Lesen Sie über die Erfahrungen von Unternehmen und Einzelpersonen, denen wir geholfen haben.</p>
+        </div>
+        <div class="row g-4">
+            <!-- Testimonial 1 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card p-4 shadow-lg border-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://media.gettyimages.com/id/1319771651/photo/portrait-of-man-smiling-at-camera.jpg?s=612x612&w=0&k=20&c=kY7Uml6KUH1xoIpXMikTpd3J7-vRsDzN9B-V6Vcs8bU=" 
+                             alt="Kunde" class="rounded-circle me-3" width="50">
+                        <div>
+                            <h5 class="fw-bold mb-0">Michael Schmidt</h5>
+                            <p class="text-muted small">Personalleiter, Tech GmbH</p>
+                        </div>
+                    </div>
+                    <p class="text-secondary">"GM Consultant war maßgeblich daran beteiligt, unser Tech-Team aufzubauen. Ihr Verständnis für den Markt ist herausragend."</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl font-bold mb-2">98%</div>
-                    <div class="text-[var(--text)]">Client Satisfaction</div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card p-4 shadow-lg border-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://www.profilebakery.com/wp-content/uploads/2024/12/business-portrait-professional-headshot-1734993616.jpg" 
+                             alt="Kunde" class="rounded-circle me-3" width="50">
+                        <div>
+                            <h5 class="fw-bold mb-0">Laura Meyer</h5>
+                            <p class="text-muted small">Programm-Absolventin</p>
+                        </div>
+                    </div>
+                    <p class="text-secondary">"Das Schulungsprogramm hat meine Erwartungen übertroffen. Ich habe wertvolle Fähigkeiten erworben, die meine Karriere vorangebracht haben."</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl font-bold mb-2">200+</div>
-                    <div class="text-[var(--text)]">Partner Companies</div>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-4xl font-bold mb-2">15+</div>
-                    <div class="text-[var(--text)]">Years Experience</div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card p-4 shadow-lg border-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://t3.ftcdn.net/jpg/10/72/68/08/360_F_1072680885_utKSwsK1Sb1tjiljmAnM7cMAuM6Tg8El.jpg" 
+                             alt="Kunde" class="rounded-circle me-3" width="50">
+                        <div>
+                            <h5 class="fw-bold mb-0">Thomas Weber</h5>
+                            <p class="text-muted small">CEO, Innovation AG</p>
+                        </div>
+                    </div>
+                    <p class="text-secondary">"Die Zusammenarbeit mit GM Consultant hat unseren Rekrutierungsprozess grundlegend verändert. Sie verstehen unsere Bedürfnisse wirklich."</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Process Section -->
-    <section class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold mb-4">How We Work</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Our proven process ensures successful outcomes for both candidates and companies.
+<section id="contact" class="py-5 ">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-6" data-aos="fade-right">
+                <h2 class="fw-bold">Kontakt aufnehmen</h2>
+                <p class="text-light mb-4">
+                    Bereit, Ihre Karriere zu verändern oder die perfekten Talente zu finden? Kontaktieren Sie uns noch heute.
                 </p>
+                <ul class="list-unstyled">
+                    <li class="d-flex align-items-center mb-3">
+                        <i class="bi bi-telephone-fill me-3 fs-4 text-warning"></i>
+                        <div>
+                            <strong>Telefon</strong>
+                            <p class="mb-0 text-">+49 (0) 123 456 789</p>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope-fill me-3 fs-4 text-warning"></i>
+                        <div>
+                            <strong>E-Mail</strong>
+                            <p class="mb-0 text-">contact@gmconsultant.de</p>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt-fill me-3 fs-4 text-warning"></i>
+                        <div>
+                            <strong>Standort</strong>
+                            <p class="mb-0 text-">München, Deutschland</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-20 h-20 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
-                    <h3 class="text-xl font-bold mb-4">Initial Consultation</h3>
-                    <p class="text-gray-600">Understanding your specific needs and requirements</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-20 h-20 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
-                    <h3 class="text-xl font-bold mb-4">Strategy Development</h3>
-                    <p class="text-gray-600">Creating a tailored approach for your success</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-20 h-20 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
-                    <h3 class="text-xl font-bold mb-4">Implementation</h3>
-                    <p class="text-gray-600">Executing the plan with precision and care</p>
-                </div>
-                <!-- Step 4 -->
-                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-20 h-20 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">4</div>
-                    <h3 class="text-xl font-bold mb-4">Ongoing Support</h3>
-                    <p class="text-gray-600">Continuous assistance and optimization</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-24">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold mb-4">What Our Clients Say</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">
-                    Read about the experiences of companies and individuals we've helped.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-6">
-                        <img src="https://media.gettyimages.com/id/1319771651/photo/portrait-of-man-smiling-at-camera.jpg?s=612x612&w=0&k=20&c=kY7Uml6KUH1xoIpXMikTpd3J7-vRsDzN9B-V6Vcs8bU=" alt="Client" class="w-12 h-12 rounded-full">
-                        <div class="ml-4">
-                            <h4 class="font-bold">Michael Schmidt</h4>
-                            <p class="text-gray-600">HR Director, Tech GmbH</p>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="card p-4 shadow-lg border-0">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label text-dark">Name</label>
+                            <input type="text" class="form-control" required>
                         </div>
-                    </div>
-                    <p class="text-gray-700">"GM Consultant has been instrumental in helping us build our tech team. Their understanding of the market is exceptional."</p>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-6">
-                        <img src="https://www.profilebakery.com/wp-content/uploads/2024/12/business-portrait-professional-headshot-1734993616.jpg" alt="Client" class="w-12 h-12 rounded-full">
-                        <div class="ml-4">
-                            <h4 class="font-bold">Laura Meyer</h4>
-                            <p class="text-gray-600">Program Graduate</p>
+                        <div class="mb-3">
+                            <label class="form-label text-dark">E-Mail</label>
+                            <input type="email" class="form-control" required>
                         </div>
-                    </div>
-                    <p class="text-gray-700">"The training program exceeded my expectations. I gained valuable skills that helped advance my career."</p>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center mb-6">
-                        <img src="https://t3.ftcdn.net/jpg/10/72/68/08/360_F_1072680885_utKSwsK1Sb1tjiljmAnM7cMAuM6Tg8El.jpg" alt="Client" class="w-12 h-12 rounded-full">
-                        <div class="ml-4">
-                            <h4 class="font-bold">Thomas Weber</h4>
-                            <p class="text-gray-600">CEO, Innovation AG</p>
+                        <div class="mb-3">
+                            <label class="form-label text-dark">Nachricht</label>
+                            <textarea class="form-control" rows="4" required></textarea>
                         </div>
-                    </div>
-                    <p class="text-gray-700">"Working with GM Consultant has transformed our recruitment process. They truly understand our needs."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 gradient-bg">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-white" data-aos="fade-right">
-                    <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
-                    <p class="text-[var(--text)] mb-8">
-                        Ready to transform your career or find the perfect talent? Contact us today.
-                    </p>
-                    <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="font-bold">Phone</div>
-                                <div class="text-[var(--text)]">+49 (0) 123 456 789</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="font-bold">Email</div>
-                                <div class="text-[var(--text)]">contact@gmconsultant.de</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="font-bold">Location</div>
-                                <div class="text-[var(--text)]">Munich, Germany</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-aos="fade-left">
-                    <form class="bg-white p-8 rounded-2xl shadow-lg">
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block text-gray-700 mb-2">Name</label>
-                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 mb-2">Email</label>
-                                <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 mb-2">Message</label>
-                                <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition"></textarea>
-                            </div>
-                            <button class="w-full py-3 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--secondary)] transition">
-                                Send Message
-                            </button>
-                        </div>
+                        <button class="btn btn-warning w-100">Nachricht senden</button>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <img src="https://drive.google.com/thumbnail?id=1H9dlLjhSQCH3BaE2bHqKR7QPm8dr_oqt&sz=w1000" alt="GM Consultant Logo" class="h-8 mb-6">
-                    <p class="text-gray-400">
-                        Your trusted partner for education and recruitment solutions in Germany.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-6">Services</h4>
-                    <ul class="space-y-4 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Ausbildung Guidance</a></li>
-                        <li><a href="#" class="hover:text-white transition">University Admissions</a></li>
-                        <li><a href="#" class="hover:text-white transition">Recruitment Solutions</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-6">Company</h4>
-                    <ul class="space-y-4 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
-                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-6">Legal</h4>
-                    <ul class="space-y-4 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-white transition">Impressum</a></li>
-                    </ul>
-                </div>
+
+<footer class="py-5" style="background-color: #5e6264; color: white;">
+    <div class="container px-4">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <img src="./WhatsApp_Image_2025-02-25_at_11.06.36_PM-removebg-preview.png" alt="GM Consultant Logo" class="img-fluid mb-2" style="height: 50px;">
+                <p class="text-light">
+                    Your trusted partner for education and recruitment solutions in Germany.
+                </p>
             </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 GM Consultant. All rights reserved.</p>
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3 text-white">Services</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-decoration-none text-light">Ausbildung Guidance</a></li>
+                    <li><a href="#" class="text-decoration-none text-light">University Admissions</a></li>
+                    <li><a href="#" class="text-decoration-none text-light">Recruitment Solutions</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3 text-white">Company</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-decoration-none text-light">About Us</a></li>
+                    <li><a href="#" class="text-decoration-none text-light">Careers</a></li>
+                    <li><a href="#" class="text-decoration-none text-light">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5 class="fw-bold mb-3 text-white">Legal</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-decoration-none text-light">Privacy Policy</a></li>
+                    <li><a href="#" class="text-decoration-none text-light">Terms of Service</a></li>
+                    <li><a href="#" class="text-decoration-none text-light">Impressum</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
-
-    <!-- WhatsApp Chat Button -->
-    <a href="https://wa.me/491234567890" class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition z-50">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.25.625 4.37 1.71 6.19L.105 23.34c-.18.56.13 1.18.72 1.34.59.16 1.21-.17 1.37-.76l1.41-4.98C5.33 21.18 8.38 22.5 12 22.5c6.627 0 12-5.373 12-12S18.627 0 12 0zM8.13 18.41c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm3.75 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm3.75 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/>
-        </svg>
-    </a>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="fixed bottom-8 right-24 bg-[var(--primary)] text-white p-4 rounded-full shadow-lg hover:bg-[var(--secondary)] transition z-50 hidden">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-        </svg>
-    </button>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            offset: 100,
-            once: true
-        });
-
-        // Initialize Glider Carousel
-        new Glider(document.querySelector('.glider'), {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            draggable: true,
-            arrows: {
-                prev: '.glider-prev',
-                next: '.glider-next'
-            },
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                }
-            ]
-        });
-
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('hidden');
-            } else {
-                backToTopButton.classList.add('hidden');
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Smooth Scroll for Navigation Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-
-        if (mobileMenuButton) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-
-        // Form Validation
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Add your form submission logic here
-	                alert('Thank you for your message. We will get back to you soon!');
-                form.reset();
-            });
-        } 
+        <div class="border-top border-light mt-4 pt-3 text-center text-light">
+            <p>&copy; 2025 GM Consultant. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
 
-
-
-        document.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    const blueSections = document.querySelectorAll('.gradient-bg'); // Select all blue sections
-
-    let isOverBlueSection = false;
-
-    blueSections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= 0 && rect.bottom >= 0) {
-        isOverBlueSection = true;
-      }
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+        duration: 1000,
+        once: true
     });
+});
+</script>
 
-    if (isOverBlueSection) {
-      header.classList.add('over-blue-section');
-    } else {
-      header.classList.remove('over-blue-section');
-    }
-  });
 
-    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   
 </body>
 </html>
